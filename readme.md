@@ -13,7 +13,7 @@ The `Basic branch` contains a simple separation of `Commands` and `Queries`.
 
 ## The API
 
-The above branches all exposes the same `API`, you can find it [here](http://www.google.com).
+The above branches all exposes the same `API`, you can find it [here](https://github.com/Adraca/CQRS-Architecture-Examples/blob/master/swagger.yaml).
 This is a simplified view of the exposed methods:
 
 ### Blog API
@@ -31,3 +31,5 @@ This is a simplified view of the exposed methods:
 ## Additionnal Notes
 
 This is work in progress for now, check back later!
+
+The API documentation was created using the [Swagger Editor](https://editor.swagger.io)
