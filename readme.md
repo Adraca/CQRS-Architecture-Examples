@@ -2,13 +2,17 @@
 
 This repository contains multiple implementations of the same `API`. You can find more details about the `API` in the [The API](https://github.com/Adraca/CQRS-Architecture-Examples#blog-api) part below.
 
-All of this is based on various real-world `CQRS` applications and point of views.
+All of this is based on various real-world `CQRS` applications and point of views (and Greg Young's work).
 
 ## Branches
 
 Each branches of this repository shows a different and gradual approch to `CQRS`:
 
 The [Master branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/master) contains the most advanced version of the application and serves as a showcase for `CQRS` projects.
+
+Currently on Master:
+
+- Just an empty API, come back later
 
 The [Basic branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic) will contains a simple separation of `Commands` and `Queries`.
 
@@ -34,4 +38,6 @@ This is a simplified view of the exposed methods:
 
 This is work in progress for now, check back later!
 
-The API documentation was created using the [Swagger Editor](https://editor.swagger.io)
+Tools used during the development:
+
+- [Swagger.io](swagger.io) and it's [Editor](https://editor.swagger.io) for the [Documentation](https://github.com/Adraca/CQRS-Architecture-Examples/blob/master/swagger.yaml).
