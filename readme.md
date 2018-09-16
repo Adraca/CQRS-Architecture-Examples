@@ -12,9 +12,11 @@ The [Master branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/ma
 
 Currently on Master:
 
-- Just an empty API, come back later
+- The example API with all routes, without implementation, come back later
 
-The [Basic branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic) will contains a simple separation of `Commands` and `Queries`.
+The [Basic-CQRS branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-cqrs) will contains a simple separation of `Commands` and `Queries`.
+
+The [Basic-Core branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-core) will contains the API working without any traces of the CQRS pattern. It's a first version only used for futur references and comparison.
 
 ## The API
 
@@ -41,3 +43,4 @@ This is work in progress for now, check back later!
 Tools used during the development:
 
 - [Swagger.io](swagger.io) and it's [Editor](https://editor.swagger.io) for the [Documentation](https://github.com/Adraca/CQRS-Architecture-Examples/blob/master/swagger.yaml).
+- [Swashbuckles](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for the .Net Core implementation of Swagger.
