@@ -1,6 +1,9 @@
 ﻿using BlogAPI.Models;
+using BlogAPI.Repositories;
 
 using Microsoft.AspNetCore.Mvc;
+
+using System.Threading.Tasks;
 
 namespace BlogAPI.Controllers
 {
@@ -8,15 +11,22 @@ namespace BlogAPI.Controllers
     [ApiController]
     public class AuthorsController : ControllerBase
     {
+        private readonly IAuthorRepository _repository;
+
+        public AuthorsController(IAuthorRepository repository)
+        {
+            _repository = repository;
+        }
+
         /// <summary>
         /// Get all articles of an author
         /// </summary>
         /// <param name="AuthorId">The identifier of the author</param>
         /// <returns>The author</returns>
         [HttpGet("{authorId}")]
-        public Author Get([FromQuery]int AuthorId)
+        public async Task<ActionResult<Author>> GetAsync([FromQuery]int AuthorId)
         {
-            return new Author();
+            return await _repository.FindById(AuthorId);
         }
     }
 }

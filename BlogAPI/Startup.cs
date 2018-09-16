@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BlogAPI.Repositories;
+
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +31,9 @@ namespace BlogAPI
                 c.SwaggerDoc("v1", new Info { Title = "BlogAPI", Version = "v1" });
             });
 
+            services.AddTransient<IArticleRepository, SqlArticleRepository>();
+            services.AddTransient<IAuthorRepository, SqlAuthorRepository>();
+            services.AddTransient<ICommentRepository, SqlCommentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

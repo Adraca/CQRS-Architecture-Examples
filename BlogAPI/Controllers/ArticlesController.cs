@@ -1,8 +1,10 @@
 ﻿using BlogAPI.Models;
+using BlogAPI.Repositories;
 
 using Microsoft.AspNetCore.Mvc;
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BlogAPI.Controllers
 {
@@ -10,6 +12,13 @@ namespace BlogAPI.Controllers
     [ApiController]
     public class ArticlesController : ControllerBase
     {
+        private readonly IArticleRepository _repository;
+
+        public ArticlesController(IArticleRepository repository)
+        {
+            _repository = repository;
+        }
+
         /// <summary>
         /// Add a new article
         /// </summary>
@@ -17,7 +26,7 @@ namespace BlogAPI.Controllers
         [HttpPost]
         public void AddArticle([FromBody]Article article)
         {
-
+            _repository.AddArticle(article);
         }
 
         /// <summary>
@@ -27,7 +36,7 @@ namespace BlogAPI.Controllers
         [HttpPut]
         public void UpdateArticle([FromBody]Article article)
         {
-
+            _repository.UpdateArticle(article);
         }
 
         /// <summary>
@@ -35,9 +44,9 @@ namespace BlogAPI.Controllers
         /// </summary>
         /// <returns>The 5 latest articles</returns>
         [HttpGet]
-        public IReadOnlyCollection<Article> Get()
+        public async Task<IEnumerable<Article>> Get()
         {
-            return new List<Article>();
+            return await _repository.FindLatestArticles();
         }
 
         /// <summary>
@@ -46,15 +55,15 @@ namespace BlogAPI.Controllers
         /// <param name="idArticle">The identifier of this article</param>
         /// <returns>The article</returns>
         [HttpGet("{articleId}")]
-        public Article Get(int idArticle)
+        public async Task<ActionResult<Article>> Get(int idArticle)
         {
-            return new Article();
+            return await _repository.FindById(idArticle);
         }
 
         [HttpDelete("{articleId}")]
         public void DeleteArticle([FromQuery]int idArticle)
         {
-
+            _repository.DeleteArticle(idArticle);
         }
 
         /// <summary>
@@ -63,9 +72,9 @@ namespace BlogAPI.Controllers
         /// <param name="authorId">The identifier for this author</param>
         /// <returns>A list of articles</returns>
         [HttpGet("{authorId}")]
-        public IReadOnlyCollection<Article> AuthorArticles([FromQuery]int authorId)
+        public async Task<IEnumerable<Article>> AuthorArticles([FromQuery]int authorId)
         {
-            return new List<Article>();
+            return await _repository.FindByAuthor(authorId);
         }
     }
 }

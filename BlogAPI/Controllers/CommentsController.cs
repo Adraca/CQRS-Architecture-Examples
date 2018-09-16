@@ -1,8 +1,10 @@
 ﻿using BlogAPI.Models;
+using BlogAPI.Repositories;
 
 using Microsoft.AspNetCore.Mvc;
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BlogAPI.Controllers
 {
@@ -10,6 +12,13 @@ namespace BlogAPI.Controllers
     [ApiController]
     public class CommentsController : ControllerBase
     {
+        private readonly ICommentRepository _repository;
+
+        public CommentsController(ICommentRepository repository)
+        {
+            _repository = repository;
+        }
+
         /// <summary>
         /// Add a new comment
         /// </summary>
@@ -17,7 +26,7 @@ namespace BlogAPI.Controllers
         [HttpPost]
         public void AddComment([FromBody]Comment comment)
         {
-
+            _repository.AddComment(comment);
         }
 
         /// <summary>
@@ -26,9 +35,9 @@ namespace BlogAPI.Controllers
         /// <param name="idArticle">The article identifier</param>
         /// <returns>A list of comments</returns>
         [HttpGet]
-        public IReadOnlyCollection<Comment> Get([FromQuery]int idArticle)
+        public async Task<IEnumerable<Comment>> Get([FromQuery]int idArticle)
         {
-            return new List<Comment>();
+            return await _repository.FindAllByArticle(idArticle);
         }
     }
 }
