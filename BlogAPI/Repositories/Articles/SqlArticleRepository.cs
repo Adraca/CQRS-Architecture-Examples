@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogAPI.Repositories
+namespace BlogAPI.Repositories.Articles
 {
     public class SqlArticleRepository : IArticleRepository
     {
@@ -33,9 +33,17 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "INSERT INTO Article (Id, Title, Content, CreationDate, AuthorId) VALUES (@newArticle)";
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(query, new { newArticle = article });
+                dbConnection.ExecuteAsync(
+                    Constants.SPNewArticle,
+                    new
+                    {
+                        article.Title,
+                        article.Content,
+                        article.CreationDate,
+                        IdAuthor = article.AuthorId
+                    },
+                    commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -43,9 +51,8 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "DELETE FROM Article WHERE Id = @Id";
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(query, new { Id = idArticle });
+                dbConnection.ExecuteAsync(Constants.SPDeleteArticle, new { Id = idArticle }, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -53,9 +60,8 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "SELECT * FROM Article WHERE IdAuthor = @Id";
                 dbConnection.Open();
-                return await dbConnection.QueryAsync<Article>(query, new { Id = idAuthor });
+                return await dbConnection.QueryAsync<Article>(Constants.SPGetAuthorArticles, new { Id = idAuthor }, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -63,9 +69,8 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "SELECT * FROM Article WHERE Id = @Id";
                 dbConnection.Open();
-                var result = await dbConnection.QueryAsync<Article>(query, new { Id = idArticle });
+                var result = await dbConnection.QueryAsync<Article>(Constants.SPGetArticle, new { Id = idArticle }, commandType: CommandType.StoredProcedure);
 
                 return result.FirstOrDefault();
             }
@@ -75,9 +80,8 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "SELECT TOP 5 * FROM Article ORDER BY Date ASC";
                 dbConnection.Open();
-                return await dbConnection.QueryAsync<Article>(query);
+                return await dbConnection.QueryAsync<Article>(Constants.SPLatestArticles, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -85,9 +89,16 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "UPDATE Article @updateArticle SET WHERE Id = @Id";
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(query, new { updateArticle = article, Id = article.Id });
+                dbConnection.ExecuteAsync(
+                    Constants.SPUpdateArticle,
+                    new
+                    {
+                        article.Id,
+                        article.Title,
+                        article.Content
+                    },
+                    commandType: CommandType.StoredProcedure);
             }
         }
     }

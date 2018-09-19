@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogAPI.Repositories
+namespace BlogAPI.Repositories.Authors
 {
     public class SqlAuthorRepository : IAuthorRepository
     {
@@ -32,9 +32,11 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "SELECT * FROM Author WHERE Id = @Id";
                 dbConnection.Open();
-                var result = await dbConnection.QueryAsync<Author>(query, new { Id = idAuthor });
+                var result = await dbConnection.QueryAsync<Author>(
+                    Constants.SPGetAuthor,
+                    new { Id = idAuthor },
+                    commandType: CommandType.StoredProcedure);
                 return result.FirstOrDefault();
             }
         }

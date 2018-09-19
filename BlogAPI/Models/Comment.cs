@@ -7,7 +7,7 @@ namespace BlogAPI.Models
         public int Id { get; set; }
         public string Content { get; set; }
         public DateTime CreationDate { get; set; }
-        public string AuthorName { get; set; }
+        public int AuthorId { get; set; }
         public int ArticleId { get; set; }
     }
 }

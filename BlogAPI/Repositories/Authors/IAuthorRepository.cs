@@ -2,7 +2,7 @@
 
 using System.Threading.Tasks;
 
-namespace BlogAPI.Repositories
+namespace BlogAPI.Repositories.Authors
 {
     public interface IAuthorRepository
     {

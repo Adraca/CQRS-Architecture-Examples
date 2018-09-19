@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace BlogAPI.Repositories
+namespace BlogAPI.Repositories.Comments
 {
     public class SqlCommentRepository : ICommentRepository
     {
@@ -32,9 +32,17 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "INSERT INTO Comment (Id, Content, CreationDate, AuthorName, ArticleId) VALUES (@newComment)";
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(query, new { newComment = comment });
+                dbConnection.ExecuteAsync(
+                    Constants.SPNewComment,
+                    new
+                    {
+                        comment.Content,
+                        comment.CreationDate,
+                        IdAuthor = comment.AuthorId,
+                        IdArticle = comment.ArticleId
+                    },
+                    commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -42,9 +50,11 @@ namespace BlogAPI.Repositories
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string query = "SELECT * FROM Comment WHERE IdArticle = @Id";
                 dbConnection.Open();
-                return await dbConnection.QueryAsync<Comment>(query, new { Id = idArticle });
+                return await dbConnection.QueryAsync<Comment>(
+                    Constants.SPGetComments,
+                    new { Id = idArticle },
+                    commandType: CommandType.StoredProcedure);
             }
         }
     }
