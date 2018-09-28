@@ -10,13 +10,14 @@ Each branches of this repository shows a different and gradual approach to `CQRS
 
 The [Master branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/master) contains the most advanced version of the application and serves as a showcase for `CQRS` projects.
 
-Currently on Master:
+**Currently on Master:**
 
 - The example API with all routes, without Command/Query separation yet, come back later
+- Next step: separating source files in multiple projects for the sake of readability and SOLID.
 
 The [Basic-Core branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-core) contains the API working without any traces of the CQRS or DDD patterns.
 
-This is a first version only used for future references and comparison. Here, all sources files are parts of the same project with only a simple folder separation.
+This is a first version only used for future references and comparison. Here, all source files are parts of the same project with only a simple folder separation.
 
 The [Basic-CQRS branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-cqrs) will contains a simple separation of `Commands` and `Queries`.
 
