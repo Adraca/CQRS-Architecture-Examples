@@ -24,7 +24,9 @@ namespace BlogAPI.Controllers
         /// <param name="AuthorId">The identifier of the author</param>
         /// <returns>The author</returns>
         [HttpGet("{authorId}")]
-        public async Task<ActionResult<Author>> GetAsync([FromQuery]int AuthorId)
+        [ProducesResponseType(typeof(Author), 200)]
+        [ProducesResponseType(500)]
+        public async Task<ActionResult<Author>> GetAsync(int AuthorId)
         {
             return await _repository.FindById(AuthorId);
         }

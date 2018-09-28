@@ -24,6 +24,8 @@ namespace BlogAPI.Controllers
         /// </summary>
         /// <param name="article">The article to add</param>
         [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
         public void AddArticle([FromBody]Article article)
         {
             _repository.AddArticle(article);
@@ -34,6 +36,8 @@ namespace BlogAPI.Controllers
         /// </summary>
         /// <param name="article">The article to update</param>
         [HttpPut]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
         public void UpdateArticle([FromBody]Article article)
         {
             _repository.UpdateArticle(article);
@@ -44,6 +48,8 @@ namespace BlogAPI.Controllers
         /// </summary>
         /// <returns>The 5 latest articles</returns>
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Article>), 200)]
+        [ProducesResponseType(500)]
         public async Task<IEnumerable<Article>> Get()
         {
             return await _repository.FindLatestArticles();
@@ -55,13 +61,21 @@ namespace BlogAPI.Controllers
         /// <param name="idArticle">The identifier of this article</param>
         /// <returns>The article</returns>
         [HttpGet("{articleId}")]
+        [ProducesResponseType(typeof(Article), 200)]
+        [ProducesResponseType(500)]
         public async Task<ActionResult<Article>> Get(int idArticle)
         {
             return await _repository.FindById(idArticle);
         }
 
+        /// <summary>
+        /// Delete a specific article
+        /// </summary>
+        /// <param name="idArticle">The identifier of the article to delete</param>
         [HttpDelete("{articleId}")]
-        public void DeleteArticle([FromQuery]int idArticle)
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
+        public void DeleteArticle(int idArticle)
         {
             _repository.DeleteArticle(idArticle);
         }
@@ -71,8 +85,10 @@ namespace BlogAPI.Controllers
         /// </summary>
         /// <param name="authorId">The identifier for this author</param>
         /// <returns>A list of articles</returns>
-        [HttpGet("{authorId}")]
-        public async Task<IEnumerable<Article>> AuthorArticles([FromQuery]int authorId)
+        [HttpGet("Author/{authorId}")]
+        [ProducesResponseType(typeof(IEnumerable<Article>), 200)]
+        [ProducesResponseType(500)]
+        public async Task<IEnumerable<Article>> AuthorArticles(int authorId)
         {
             return await _repository.FindByAuthor(authorId);
         }

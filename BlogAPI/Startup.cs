@@ -10,18 +10,19 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Swashbuckle.AspNetCore.Swagger;
 
+using System.IO;
+
 namespace BlogAPI
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services
@@ -31,6 +32,7 @@ namespace BlogAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BlogAPI", Version = "v1" });
+                c.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "BlogAPI.xml"));
             });
 
             services.AddTransient<IArticleRepository, SqlArticleRepository>();
@@ -38,7 +40,6 @@ namespace BlogAPI
             services.AddTransient<ICommentRepository, SqlCommentRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

@@ -24,6 +24,8 @@ namespace BlogAPI.Controllers
         /// </summary>
         /// <param name="comment">The comment to add</param>
         [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
         public void AddComment([FromBody]Comment comment)
         {
             _repository.AddComment(comment);
@@ -35,7 +37,9 @@ namespace BlogAPI.Controllers
         /// <param name="idArticle">The article identifier</param>
         /// <returns>A list of comments</returns>
         [HttpGet]
-        public async Task<IEnumerable<Comment>> Get([FromQuery]int idArticle)
+        [ProducesResponseType(typeof(IEnumerable<Comment>), 200)]
+        [ProducesResponseType(500)]
+        public async Task<IEnumerable<Comment>> Get(int idArticle)
         {
             return await _repository.FindAllByArticle(idArticle);
         }
