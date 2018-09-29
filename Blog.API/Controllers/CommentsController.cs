@@ -1,4 +1,4 @@
-﻿using Blog.Infrastructure.Models;
+﻿using Blog.Domain.Models;
 using Blog.Infrastructure.Repositories.Comments;
 
 using Microsoft.AspNetCore.Mvc;

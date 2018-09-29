@@ -1,4 +1,4 @@
-﻿using Blog.Infrastructure.Models;
+﻿using Blog.Domain.Models;
 using Blog.Infrastructure.Repositories.Authors;
 
 using Microsoft.AspNetCore.Mvc;

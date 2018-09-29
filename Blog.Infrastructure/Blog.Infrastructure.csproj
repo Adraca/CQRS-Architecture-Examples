@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Domain\Blog.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
