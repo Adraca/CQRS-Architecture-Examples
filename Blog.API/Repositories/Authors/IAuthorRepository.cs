@@ -1,8 +1,8 @@
-﻿using BlogAPI.Models;
+﻿using Blog.API.Models;
 
 using System.Threading.Tasks;
 
-namespace BlogAPI.Repositories.Authors
+namespace Blog.API.Repositories.Authors
 {
     public interface IAuthorRepository
     {

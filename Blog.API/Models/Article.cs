@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlogAPI.Models
+namespace Blog.API.Models
 {
     /// <summary>
     /// Represents the article

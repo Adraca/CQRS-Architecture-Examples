@@ -1,4 +1,4 @@
-﻿using BlogAPI.Models;
+﻿using Blog.API.Models;
 
 using Dapper;
 
@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace BlogAPI.Repositories.Comments
+namespace Blog.API.Repositories.Comments
 {
     public class SqlCommentRepository : ICommentRepository
     {

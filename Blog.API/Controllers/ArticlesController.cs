@@ -1,12 +1,12 @@
-﻿using BlogAPI.Models;
-using BlogAPI.Repositories.Articles;
+﻿using Blog.API.Models;
+using Blog.API.Repositories.Articles;
 
 using Microsoft.AspNetCore.Mvc;
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BlogAPI.Controllers
+namespace Blog.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

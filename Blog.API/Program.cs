@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace BlogAPI
+namespace Blog.API
 {
     public class Program
     {

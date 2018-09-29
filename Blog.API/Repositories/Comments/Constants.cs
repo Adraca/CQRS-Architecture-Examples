@@ -1,4 +1,4 @@
-﻿namespace BlogAPI.Repositories.Comments
+﻿namespace Blog.API.Repositories.Comments
 {
     internal class Constants
     {

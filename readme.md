@@ -17,17 +17,15 @@ The [Master branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/ma
 
 The [Basic-Core branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-core) contains the API working without any traces of the CQRS or DDD patterns.
 
-This is a first version only used for future references and comparison. Here, all source files are parts of the same project with only a simple folder separation.
+    This is a first version only used for future references and comparison. Here, all source files are parts of the same project with only a simple folder separation.
 
-Coming Next:
+**Coming Next:**
 
-The [Basic-Domain branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-domain) will contains a simple domain and infrastructure separation as presented in the [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) examples.
+The [Domain-Core branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/domain-core) will contains a simple domain and infrastructure separation as presented in the [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) examples.
 
-The [Basic-CQRS branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/basic-cqrs) will contains a simple separation of `Commands` and `Queries`.
+The [CQRS-Core branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/cqrs-core) will contains a simple separation of `Commands` and `Queries`.
 
-The [CQRS branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/cqrs) will contains a real-life example of separation between `Commands` and `Queries`.
-
-The [Event-CQRS branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/event-cqrs) will contains a Command/Query with event management.
+The [CQRS-Event branch](https://github.com/Adraca/CQRS-Architecture-Examples/tree/cqrs-event) will contains a Command/Query with event management.
 
 The [CQRS-Event-Sourcing](https://github.com/Adraca/CQRS-Architecture-Examples/tree/cqrs-event-sourcing) will contains a Command/Query with Event Sourcing and a separation between EventStore and ViewStore Databases.
 

@@ -1,6 +1,6 @@
-﻿using BlogAPI.Repositories.Articles;
-using BlogAPI.Repositories.Authors;
-using BlogAPI.Repositories.Comments;
+﻿using Blog.API.Repositories.Articles;
+using Blog.API.Repositories.Authors;
+using Blog.API.Repositories.Comments;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +12,7 @@ using Swashbuckle.AspNetCore.Swagger;
 
 using System.IO;
 
-namespace BlogAPI
+namespace Blog.API
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace BlogAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BlogAPI", Version = "v1" });
-                c.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "BlogAPI.xml"));
+                c.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "Blog.API.xml"));
             });
 
             services.AddTransient<IArticleRepository, SqlArticleRepository>();
