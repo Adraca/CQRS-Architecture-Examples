@@ -1,5 +1,5 @@
-﻿using Blog.Domain.Models;
-using Blog.Infrastructure.Repositories.Articles;
+﻿using Blog.Domain;
+using Blog.Domain.Repositories;
 
 using Microsoft.AspNetCore.Mvc;
 

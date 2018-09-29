@@ -1,9 +1,7 @@
-﻿using Blog.Domain.Models;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Repositories.Articles
+namespace Blog.Domain.Repositories
 {
     public interface IArticleRepository
     {
@@ -13,6 +11,5 @@ namespace Blog.Infrastructure.Repositories.Articles
         Task<Article> FindById(int idArticle);
         Task<IEnumerable<Article>> FindLatestArticles();
         Task<IEnumerable<Article>> FindByAuthor(int idAuthor);
-
     }
 }

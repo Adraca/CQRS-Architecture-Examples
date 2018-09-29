@@ -1,4 +1,5 @@
-﻿using Blog.Domain.Models;
+﻿using Blog.Domain;
+using Blog.Domain.Repositories;
 
 using Dapper;
 

@@ -4,13 +4,13 @@
         <name>Blog.API</name>
     </assembly>
     <members>
-        <member name="M:Blog.API.Controllers.ArticlesController.AddArticle(Blog.Domain.Models.Article)">
+        <member name="M:Blog.API.Controllers.ArticlesController.AddArticle(Blog.Domain.Article)">
             <summary>
             Add a new article
             </summary>
             <param name="article">The article to add</param>
         </member>
-        <member name="M:Blog.API.Controllers.ArticlesController.UpdateArticle(Blog.Domain.Models.Article)">
+        <member name="M:Blog.API.Controllers.ArticlesController.UpdateArticle(Blog.Domain.Article)">
             <summary>
             Update an existing article
             </summary>
@@ -49,7 +49,7 @@
             <param name="AuthorId">The identifier of the author</param>
             <returns>The author</returns>
         </member>
-        <member name="M:Blog.API.Controllers.CommentsController.AddComment(Blog.Domain.Models.Comment)">
+        <member name="M:Blog.API.Controllers.CommentsController.AddComment(Blog.Domain.Comment)">
             <summary>
             Add a new comment
             </summary>

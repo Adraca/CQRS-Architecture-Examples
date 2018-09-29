@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blog.Domain.Models
+namespace Blog.Domain
 {
     /// <summary>
     /// Represents the author of an article

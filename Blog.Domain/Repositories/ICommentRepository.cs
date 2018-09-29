@@ -1,9 +1,7 @@
-﻿using Blog.Domain.Models;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Repositories.Comments
+namespace Blog.Domain.Repositories
 {
     public interface ICommentRepository
     {
