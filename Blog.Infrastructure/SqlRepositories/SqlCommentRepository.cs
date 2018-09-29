@@ -10,7 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Repositories.Comments
+namespace Blog.Infrastructure.SqlRepositories
 {
     public class SqlCommentRepository : ICommentRepository
     {

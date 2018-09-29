@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Repositories.Authors
+namespace Blog.Infrastructure.SqlRepositories
 {
     public class SqlAuthorRepository : IAuthorRepository
     {

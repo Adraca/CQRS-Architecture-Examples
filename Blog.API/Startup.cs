@@ -1,7 +1,5 @@
 ﻿using Blog.Domain.Repositories;
-using Blog.Infrastructure.Repositories.Articles;
-using Blog.Infrastructure.Repositories.Authors;
-using Blog.Infrastructure.Repositories.Comments;
+using Blog.Infrastructure.SqlRepositories;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

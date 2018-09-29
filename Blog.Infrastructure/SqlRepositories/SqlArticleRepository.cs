@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Repositories.Articles
+namespace Blog.Infrastructure.SqlRepositories
 {
     public class SqlArticleRepository : IArticleRepository
     {
