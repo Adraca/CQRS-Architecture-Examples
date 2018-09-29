@@ -1,9 +1,9 @@
-﻿using Blog.API.Models;
+﻿using Blog.Infrastructure.Models;
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Blog.API.Repositories.Articles
+namespace Blog.Infrastructure.Repositories.Articles
 {
     public interface IArticleRepository
     {

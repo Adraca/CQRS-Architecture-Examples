@@ -1,5 +1,5 @@
-﻿using Blog.API.Models;
-using Blog.API.Repositories.Articles;
+﻿using Blog.Infrastructure.Models;
+using Blog.Infrastructure.Repositories.Articles;
 
 using Microsoft.AspNetCore.Mvc;
 

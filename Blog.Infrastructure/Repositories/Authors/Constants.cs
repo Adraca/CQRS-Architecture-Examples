@@ -1,4 +1,4 @@
-﻿namespace Blog.API.Repositories.Authors
+﻿namespace Blog.Infrastructure.Repositories.Authors
 {
     internal class Constants
     {

@@ -1,6 +1,6 @@
-﻿using Blog.API.Repositories.Articles;
-using Blog.API.Repositories.Authors;
-using Blog.API.Repositories.Comments;
+﻿using Blog.Infrastructure.Repositories.Articles;
+using Blog.Infrastructure.Repositories.Authors;
+using Blog.Infrastructure.Repositories.Comments;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

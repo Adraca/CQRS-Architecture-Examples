@@ -1,5 +1,5 @@
-﻿using Blog.API.Models;
-using Blog.API.Repositories.Comments;
+﻿using Blog.Infrastructure.Models;
+using Blog.Infrastructure.Repositories.Comments;
 
 using Microsoft.AspNetCore.Mvc;
 

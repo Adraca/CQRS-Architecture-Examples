@@ -1,4 +1,4 @@
-﻿using Blog.API.Models;
+﻿using Blog.Infrastructure.Models;
 
 using Dapper;
 
@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blog.API.Repositories.Articles
+namespace Blog.Infrastructure.Repositories.Articles
 {
     public class SqlArticleRepository : IArticleRepository
     {

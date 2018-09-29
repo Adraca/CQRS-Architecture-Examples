@@ -4,13 +4,13 @@
         <name>Blog.API</name>
     </assembly>
     <members>
-        <member name="M:Blog.API.Controllers.ArticlesController.AddArticle(Blog.API.Models.Article)">
+        <member name="M:Blog.API.Controllers.ArticlesController.AddArticle(Blog.Infrastructure.Models.Article)">
             <summary>
             Add a new article
             </summary>
             <param name="article">The article to add</param>
         </member>
-        <member name="M:Blog.API.Controllers.ArticlesController.UpdateArticle(Blog.API.Models.Article)">
+        <member name="M:Blog.API.Controllers.ArticlesController.UpdateArticle(Blog.Infrastructure.Models.Article)">
             <summary>
             Update an existing article
             </summary>
@@ -49,7 +49,7 @@
             <param name="AuthorId">The identifier of the author</param>
             <returns>The author</returns>
         </member>
-        <member name="M:Blog.API.Controllers.CommentsController.AddComment(Blog.API.Models.Comment)">
+        <member name="M:Blog.API.Controllers.CommentsController.AddComment(Blog.Infrastructure.Models.Comment)">
             <summary>
             Add a new comment
             </summary>
@@ -61,86 +61,6 @@
             </summary>
             <param name="idArticle">The article identifier</param>
             <returns>A list of comments</returns>
-        </member>
-        <member name="T:Blog.API.Models.Article">
-            <summary>
-            Represents the article
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Article.Id">
-            <summary>
-            The unique identifier for this article
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Article.Title">
-            <summary>
-            The title, should be as click-bait as possible
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Article.Content">
-            <summary>
-            Here is the real content of the article, it's what it truly is
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Article.CreationDate">
-            <summary>
-            The date at which this article was added
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Article.AuthorId">
-            <summary>
-            The unique identifier for the author who wrote the article
-            </summary>
-        </member>
-        <member name="T:Blog.API.Models.Author">
-            <summary>
-            Represents the author of an article
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Author.Id">
-            <summary>
-            The unique identifier of the author
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Author.Name">
-            <summary>
-            The name of this author, well, most of them use pseudonyms anyway
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Author.RegisterDate">
-            <summary>
-            The date when the author joined this glorious website
-            </summary>
-        </member>
-        <member name="T:Blog.API.Models.Comment">
-            <summary>
-            Represents the comment
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Comment.Id">
-            <summary>
-            The unique identifier for this comment
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Comment.Content">
-            <summary>
-            The content, where most people can finally say what they want about the article
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Comment.CreationDate">
-            <summary>
-            The creation date for this master piece of a critique
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Comment.AuthorId">
-            <summary>
-            Yes, we still know the authors of the comments, this is not 4chan
-            </summary>
-        </member>
-        <member name="P:Blog.API.Models.Comment.ArticleId">
-            <summary>
-            The unique identifier of the article, because we need to know what piece of tr*** article we are commenting on 
-            </summary>
         </member>
     </members>
 </doc>

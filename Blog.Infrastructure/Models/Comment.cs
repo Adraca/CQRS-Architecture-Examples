@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blog.API.Models
+namespace Blog.Infrastructure.Models
 {
     /// <summary>
     /// Represents the comment
