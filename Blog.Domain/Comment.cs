@@ -1,17 +1,14 @@
-﻿using System;
+﻿using Domain.Framework;
+
+using System;
 
 namespace Blog.Domain
 {
     /// <summary>
     /// Represents the comment
     /// </summary>
-    public class Comment
+    public class Comment : EntityBase
     {
-        /// <summary>
-        /// The unique identifier for this comment
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// The content, where most people can finally say what they want about the article
         /// </summary>
