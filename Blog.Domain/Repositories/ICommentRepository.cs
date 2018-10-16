@@ -5,7 +5,7 @@ namespace Blog.Domain.Repositories
 {
     public interface ICommentRepository
     {
-        void AddComment(Comment comment);
+        Task AddComment(Comment comment);
         Task<IEnumerable<Comment>> FindAllByArticle(int idArticle);
     }
 }

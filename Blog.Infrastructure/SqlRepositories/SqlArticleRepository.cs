@@ -30,12 +30,12 @@ namespace Blog.Infrastructure.SqlRepositories
             }
         }
 
-        public void AddArticle(Article article)
+        public async Task AddArticle(Article article)
         {
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(
+                await dbConnection.ExecuteAsync(
                     Constants.SPNewArticle,
                     new
                     {
@@ -48,12 +48,12 @@ namespace Blog.Infrastructure.SqlRepositories
             }
         }
 
-        public void DeleteArticle(int idArticle)
+        public async Task DeleteArticle(int idArticle)
         {
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(Constants.SPDeleteArticle, new { Id = idArticle }, commandType: CommandType.StoredProcedure);
+                await dbConnection.ExecuteAsync(Constants.SPDeleteArticle, new { Id = idArticle }, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -86,12 +86,12 @@ namespace Blog.Infrastructure.SqlRepositories
             }
         }
 
-        public void UpdateArticle(Article article)
+        public async Task UpdateArticle(Article article)
         {
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(
+                await dbConnection.ExecuteAsync(
                     Constants.SPUpdateArticle,
                     new
                     {

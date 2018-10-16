@@ -29,12 +29,12 @@ namespace Blog.Infrastructure.SqlRepositories
             }
         }
 
-        public void AddComment(Comment comment)
+        public async Task AddComment(Comment comment)
         {
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.ExecuteAsync(
+                await dbConnection.ExecuteAsync(
                     Constants.SPNewComment,
                     new
                     {
