@@ -12,11 +12,11 @@ namespace Blog.API.Controllers
     [ApiController]
     public class ArticlesController : ControllerBase
     {
-        private readonly IArticleRepository _repository;
+        private readonly ArticleAggregate _articleActions;
 
         public ArticlesController(IArticleRepository repository)
         {
-            _repository = repository;
+            _articleActions = new ArticleAggregate(repository);
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Blog.API.Controllers
         [ProducesResponseType(500)]
         public void AddArticle([FromBody]Article article)
         {
-            _repository.AddArticle(article);
+            _articleActions.AddArticle(article);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Blog.API.Controllers
         [ProducesResponseType(500)]
         public void UpdateArticle([FromBody]Article article)
         {
-            _repository.UpdateArticle(article);
+            _articleActions.UpdateArticle(article);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Blog.API.Controllers
         [ProducesResponseType(500)]
         public async Task<IEnumerable<Article>> Get()
         {
-            return await _repository.FindLatestArticles();
+            return await _articleActions.FindLatestArticles();
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Blog.API.Controllers
         [ProducesResponseType(500)]
         public async Task<ActionResult<Article>> Get(int idArticle)
         {
-            return await _repository.FindById(idArticle);
+            return await _articleActions.FindById(idArticle);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Blog.API.Controllers
         [ProducesResponseType(500)]
         public void DeleteArticle(int idArticle)
         {
-            _repository.DeleteArticle(idArticle);
+            _articleActions.DeleteArticle(idArticle);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Blog.API.Controllers
         [ProducesResponseType(500)]
         public async Task<IEnumerable<Article>> AuthorArticles(int authorId)
         {
-            return await _repository.FindByAuthor(authorId);
+            return await _articleActions.FindByAuthor(authorId);
         }
     }
 }
