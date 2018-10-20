@@ -1,4 +1,6 @@
-﻿using Blog.Domain.Repositories;
+﻿using Blog.Domain.ArticleAggregate;
+using Blog.Domain.AuthorAggregate;
+using Blog.Domain.CommentAggregate;
 using Blog.Infrastructure.SqlRepositories;
 
 using Microsoft.AspNetCore.Builder;

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Blog.Domain.Repositories
+namespace Blog.Domain.AuthorAggregate
 {
     public interface IAuthorRepository
     {

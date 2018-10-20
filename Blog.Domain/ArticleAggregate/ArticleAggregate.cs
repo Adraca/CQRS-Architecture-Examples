@@ -1,9 +1,7 @@
-﻿using Blog.Domain.Repositories;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Blog.Domain
+namespace Blog.Domain.ArticleAggregate
 {
     public class ArticleAggregate
     {

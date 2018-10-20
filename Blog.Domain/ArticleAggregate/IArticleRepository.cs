@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Blog.Domain.Repositories
+namespace Blog.Domain.ArticleAggregate
 {
     public interface IArticleRepository
     {

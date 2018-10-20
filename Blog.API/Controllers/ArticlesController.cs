@@ -1,5 +1,4 @@
-﻿using Blog.Domain;
-using Blog.Domain.Repositories;
+﻿using Blog.Domain.ArticleAggregate;
 
 using Microsoft.AspNetCore.Mvc;
 

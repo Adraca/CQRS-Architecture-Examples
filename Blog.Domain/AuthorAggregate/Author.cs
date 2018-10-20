@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blog.Domain
+namespace Blog.Domain.AuthorAggregate
 {
     /// <summary>
     /// Represents the author of an article
