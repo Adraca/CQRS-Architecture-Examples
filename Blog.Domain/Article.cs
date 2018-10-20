@@ -1,14 +1,17 @@
-﻿using Domain.Framework;
-
-using System;
+﻿using System;
 
 namespace Blog.Domain
 {
     /// <summary>
     /// Represents the article
     /// </summary>
-    public class Article : EntityBase
+    public class Article
     {
+        /// <summary>
+        /// The unique identifier of this Article
+        /// </summary>
+        public int Id { get; set; }
+
         /// <summary>
         /// The title, should be as click-bait as possible
         /// </summary>
